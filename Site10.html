@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lb_13</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: #68d7ff;
+            font-size: 10px;           
+        }
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 16px;
+            position: relative;
+            background-color: #285490;
+            color: white;
+            text-shadow: 2px 2px 5px red, -2px -2px 5px blue;
+        }
+        .header::before,
+        .header::after {
+            position: sticky;
+        }
+        .header::before {
+            content: "the_";
+        }
+        .header::after {
+            content: "_site";
+        }
+        .header span {
+            text-align: center;
+        }
+        .mid_top {
+            display: flex;
+            padding: 5px;
+            height: 400px;
+        }
+        .left_side {
+            display: flex;
+            width: 75%;
+            border-radius: 16px;
+            background-color: white;
+        }
+        .left_side_half {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+        .image {
+            height: 200px;
+            display: flex;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image:hover {
+            grid-column: span 2;
+            grid-row: span 2;
+            z-index: 10;
+            transform:scale(2);
+        }
+        .rigth_side {
+            width: 25%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: orange;
+            border-radius: 16px;
+            writing-mode: vertical-rl; 
+            box-shadow: inset 0 0 50px orange;
+        }
+        .mid_down {
+            display: flex;
+            padding: 5px;
+            height: 150px;
+        }
+        .text {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #333;
+            line-height: 1.5;
+            overflow: scroll;
+        }
+        .footer {
+            height: 150px;
+            background-color: #285490;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 16px;
+        }
+        .footer nav {
+            display: flex;
+            gap: 15px;
+        }
+        .footer nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .footer nav a:hover {
+            color: red;
+        }
+        .footer input[type="email"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .footer div:last-child {
+            margin-top: 10px;
+        }
+        .fixed {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            transition: all 0.3s;
+        }
+        .fixed:hover {
+            width: 200px;
+        }
+        @media (max-width: 768px) {
+            .mid_top {
+                display: grid;
+                grid-template-rows: auto auto auto;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                height: auto;
+            }
+
+            .left_side {
+                width: 100%;
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr;
+            }
+
+            .left_side_half {
+                width: 100%;
+                flex-direction: row;
+            }
+
+            .rigth_side {
+                width: 100%;
+                order: 2;
+                writing-mode: horizontal-tb;
+                height: 100px;
+            }
+
+            .mid_down {
+                display: grid;
+                grid-template-rows: repeat(3, auto);
+                grid-template-columns: 1fr;
+                height: auto;
+                gap: 10px;
+            }
+
+            .text {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>AWESOME</span>
+        </div>
+        <div class="mid_top">
+            <div class="left_side">
+                <div class="left_side_half">
+                    <div class="image">
+                        <img src="cat.png" alt="Профіль 1">
+                    </div>
+                    <div class="image">
+                        <img src="cat.png" alt="Профіль 2">
+                    </div>
+                </div>
+                <div class="left_side_half">
+                    <div class="image">
+                        <img src="cat.png" alt="Профіль 3">
+                    </div>
+                    <div class="image">
+                        <img src="cat.png" alt="Профіль 4">
+                    </div>
+                </div>
+            </div>
+            <div class="rigth_side">
+                PLACE FOR YOUR ADVERTISEMENT
+            </div>
+        </div>
+        <div class="mid_down">
+            <div class="text">
+                Some text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text here...
+            </div>
+            <div class="text">
+                Some text text text text text text text text text text text text text text text text text text text text text text text text text text text text texttext text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text  text text text text text text text text text text text text text text text text text text text text text text text text text text here...
+            </div>
+            <div class="text">
+                Some text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text here...
+            </div>
+        </div>
+        <div class="footer">
+            <div>VENUS</div>
+            <nav>
+                <a href="#">HOME</a>
+                <a href="#">PRODUCTS</a>
+                <a href="#">ABOUT US</a>
+            </nav>
+            <div>
+                <input type="email" placeholder="Your email">
+            </div>
+            <div>
+                made by V.I.I. 2024
+            </div>
+        </div>
+    </div>
+    <div class="fixed">Text</div>
+</body>
+</html>
